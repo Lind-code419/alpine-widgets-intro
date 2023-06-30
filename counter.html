@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Learn about the DOM</h1>
+    <div class="message">
+
+
+    </div>
+    <div>
+        <input type="text" class="username">
+        <button class="btn">Greet me</button>
+        
+    
+    </div>
+    <hr>
+    <h2>Increment/Decrement</h2>
+    <div class="total">
+        0
+
+    </div>
+    <div>
+        <button class="increment">Increment</button>
+        <button class="decrement">Decrement</button>
+    </div>
+
+    <hr>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+
+    <h2>Increment/Decrement Alpine version</h2>
+    
+    <div x-data="{total: 0}">
+        <div class="counter "x-text="total">
+            0
+    
+        </div>
+
+
+        <button @click="total++">Increment</button>
+        <button x-on:click="if (total > 0) {total--}">Decrement</button>
+    </div>
+
+
+</body>
+<script src="code.js">
+</script>
+
+
+</html>

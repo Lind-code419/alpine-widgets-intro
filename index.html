@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+
+    <h2>THese are the widgets from the tutorial from devdojo.com</h2>
+    <p>To see other improved versions of the counter go to <a href="counter.html">this page. </a></p>
+
+    <div x-data="{title: 'Hello Alpine'}">
+        <p x-text ="title"></p>
+
+        <button @click="title = 'Alpine Rocks'">Click me!</button>
+
+        <hr>
+
+        <div x-data="{count : 1 }">
+            <p x-text="count"></p>
+            <button @click="count++">increment</button>
+            <button @click="count--">decrement</button>
+
+        </div>
+    </div>
+    <hr>
+    <div x-data="{ title: 'Hello Alpine' }">
+        <p x-text="title"></p>
+    </div>
+    <hr>
+
+    <div x-data="{ countdown: 60 }"
+     x-init="setInterval(function(){
+                countdown--;
+             }, 1000);
+             ">
+        <h1 x-text="countdown"></h1>
+    </div>
+
+    <hr>
+
+    <div x-data="{ show: false }">
+        <button @click="show=!show">Show</button>
+        <div x-show.transition="show">Hello</div>
+    </div>
+
+    <hr>
+    <div x-data="{ show: false }">
+        <button @click="show=!show">Show</button>
+        <div x-show="show">Hello</div>
+    </div>
+
+    <hr>
+    <div x-data="{ code: '<p>Dynamic Paragraph</p>' }">
+        <div x-html="code"></div>
+    </div>
+
+    <hr>
+
+    <div x-data="{ code: '<p>Dynamic Paragraph</p>' }">
+        <div x-ref="sentence">I am a sentence</div>
+        <button @click="$refs.sentence.innerText = 'I just changed'">Change Sentence</button>
+    </div>
+
+    <hr>
+
+    <div x-data="{ socks: 'blue' }">
+        <template x-if="socks=='blue'">
+            <p>My socks are blue</p>
+        </template>
+        <template x-if="socks=='green'">
+            <p>My socks are green</p>
+        </template>
+        <button @click="socks = 'green'">Change Sox</button>
+    </div>
+
+    <hr>
+    <div x-data="{ groceries: ['Milk', 'Eggs', 'Cheese'] }">
+        <p>Groceries</p>
+        <ul>
+            <template x-for="item in groceries">
+                <li x-text="item"></li>
+            </template>
+        </ul>
+    </div>
+
+
+</div>
+
+</body>
+</body>
+</html>
